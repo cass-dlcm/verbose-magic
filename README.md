@@ -3,7 +3,7 @@
 This is an attempt at a RPG LaTeX template.
 The template compiles with pdflatex.
 
-![Preview](https://github.com/evanbergeron/DND-5e-LaTeX-Template/raw/master/scrot.png)
+![Preview](https://github.com/evanbergeron/DND-5e-LaTeX-Template/raw/master/example/scrot.png)
 
 ### Installation
 
