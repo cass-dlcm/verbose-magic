@@ -13,7 +13,7 @@
 }
 
 % Monster box made to look like the Monster Manual NPC definitions
-\newtcolorbox{rpgmonsterboxnobg}[2][]{
+\newtcolorbox{rpg-monsterboxnobg}[2][]{
    enhanced,
    frame hidden,
    before skip=7pt plus2pt,
@@ -34,7 +34,7 @@
 }
 
 % new Monsterbox
-\newtcolorbox{rpgmonsterbox}[2][]{
+\newtcolorbox{rpg-monsterbox}[2][]{
 	enhanced,
 	frame hidden,
 	before skip=7pt plus2pt,
@@ -61,7 +61,7 @@
 
 
 % Define Monster subsection header style
-%\newcommand{\rpgmonstersection}[1]{\subsubsection*{#1}}
+%\newcommand{\rpg-monstersection}[1]{\subsubsection*{#1}}
 \newcommand{\rpgmonstersection}[1]{
 	{\par
 	\color{titlered}\normalfont\scshape\Large #1 \vspace{3pt}
@@ -72,7 +72,7 @@
 %\titleformat{\subsubsection}
 %{\color{titlered}\normalfont\scshape\Large}{\thesubsection}{1em}{}[{\color{titlered}\titlerule[0.5pt]\color{black}}]
 
-\newenvironment{rpgmonsteraction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
+\newenvironment{rpg-monsteraction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
 
 %
 % Macros for use within the monster environment
@@ -85,19 +85,19 @@
 }
 
 % Taubular enviornment for stats-block
-\newkeycommand\stats[STR=\stat{10},
-                        DEX=\stat{10},
-                        CON=\stat{10},
-                        INT=\stat{10},
-                        WIS=\stat{10},
-                        CHA=\stat{10}]{
+\newkeycommand\stats[STR=10,
+                        DEX=10,
+                        CON=10,
+                        INT=10,
+                        WIS=10,
+                        CHA=10]{
     {\footnotesize
 	\hspace*{-3.5pt}
 	\resizebox{0.97\linewidth}{\height}{
 		\begin{tabular}{cccccc}
 			\rule{0pt}{3.7mm} %adds space between hline and table
 			\textbf{STR} & \textbf{DEX} & \textbf{CON} & \textbf{INT} & \textbf{WIS} & \textbf{CHA}\\
-			\commandkey{STR} & \commandkey{DEX} & \commandkey{CON} & \commandkey{INT} & \commandkey{WIS} & \commandkey{CHA}
+            \stat{\commandkey{STR}} & \stat{\commandkey{DEX}} & \stat{\commandkey{CON}} & \stat{\commandkey{INT}} & \stat{\commandkey{WIS}} & \stat{\commandkey{CHA}}
 		\end{tabular}
 	}
 	\\[0.4em] %adds space after table

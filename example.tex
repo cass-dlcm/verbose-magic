@@ -24,12 +24,12 @@
 \subsubsection{subsubsection name}
 
 \begin{rpg-commentbox}{rpg-commentbox name}
-	\lipsum[1]
+	you can add some comments using this box
 \end{rpg-commentbox}
 
 \begin{rpg-quotebox}
     rpg-quotebox\\
-    \lipsum[1]
+    this is a quote box
 \end{rpg-quotebox}
 
 %\newpage % Acts as columbreak because of twocolumn option; for pagebreak use \clearpage
@@ -55,23 +55,23 @@
 \end{rpg-table}
 
 \begin{rpg-paperbox}{rpg-paperbox}
-	\lipsum[1]
+	you can add some text here
 \end{rpg-paperbox}
 
 % You can optionally not include the background by saying
-%\begin{rpgmonsterboxnobg}{monsterboxnob}
-\begin{rpgmonsterbox}{monsterbox}
+%\begin{rpg-monsterboxnobg}{monsterboxnob}
+\begin{rpg-monsterbox}{rpg-monsterbox}
 	\textit{Small metasyntatic variable (golbinoid), neutral evil}\\
 	\hline
 	\basics[%
 	armorclass = 12,
 	hitpoints  = 16 (3d8 + 3),
-	speed      = 50 ft
+	speed      = 50 t
 	]
 	\hline
-	\stats[
-    STR = \stat{12}, % This stat command will autocomplete the modifier for you
-    DEX = \stat{7}
+	\stats[ % This stat command will autocomplete the modifier for you
+    STR = 12, 
+    DEX = 7
 	]
 	\hline
 	\details[%
@@ -81,19 +81,19 @@
 	languages = {Common Lisp, Erlang},
 	]
 	\hline \\[1mm]
-	\begin{rpgmonsteraction}[Monster-super-powers]
+	\begin{rpg-monsteraction}[rpg-monsteraction]
 		This Monster has some serious superpowers!
-	\end{rpgmonsteraction}
-	\rpgmonstersection{Actions}
-	\begin{rpgmonsteraction}[Generate text]
-		This one can generate tremendous amounts of text! Though only when it wants to.
-	\end{rpgmonsteraction}
+	\end{rpg-monsteraction}
 
-	\begin{rpgmonsteraction}[More actions]
+	\rpgmonstersection{rpgmonstersection}
+	\begin{rpg-monsteraction}[rpm-monsteraction]
+		This one can generate tremendous amounts of text! Though only when it wants to.
+	\end{rpg-monsteraction}
+
+	\begin{rpg-monsteraction}[rpg-monsteraction]
     See, here he goes again! Yet more text.
-	\end{rpgmonsteraction}
-\end{rpgmonsterbox}
-%\end{rpgmonsterboxnobg}
+	\end{rpg-monsteraction}
+\end{rpg-monsterbox}
 
 \chapter{Chapter name}
 
