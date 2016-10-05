@@ -1,21 +1,29 @@
-\documentclass[10pt,twoside,twocolumn]{article}
+\documentclass[10pt,twoside,twocolumn]{book}
 \usepackage[bg-letter]{rpg} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
-\usepackage[ngerman]{babel} % Trennungsregeln und autom. Überschriften in n. dt. RS
+\usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+%\title{RPG}
+%\author{Maxime BARBIER}
 
 % Start document
 \begin{document}
 \fontfamily{ppl}\selectfont % Set text font
 
+\tableofcontents
+
 % Your content goes here
 
-\section{Section}
+\chapter{Chapter name}
+
+\section{Section name}
 \lipsum[1] % filler text
 
-\subsection{Subsection}
-\subsubsection{subsubsection}
+\subsection{Subsection name}
+\subsubsection{subsubsection name}
 
-\begin{commentbox}{commentbox}
+\begin{commentbox}{commentbox name}
 	\lipsum[1]
 \end{commentbox}
 
@@ -24,7 +32,7 @@
 	As you approach this template you get a sense that the blood and tears of many generations went into its making. A warm feeling welcomes you as you type your first words.
 \end{quotebox}
 
-\newpage % Acts as columbreak because of twocolumn option; for pagebreak use \clearpage
+%\newpage % Acts as columbreak because of twocolumn option; for pagebreak use \clearpage
 
 % For more columns, you can say \begin{rpgtable}[your options here}.
 % For instance, if you wanted three columns, you could say
