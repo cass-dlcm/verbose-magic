@@ -1,19 +1,17 @@
-# D&D 5e LaTeX Template
+# RPG LaTeX Template
 
-This is an attempt at a D&D 5e LaTeX template. The color scheme is close to the original source books, as are the fonts. The fonts chosen are included by default in TeX Live.
-
+This is an attempt at a RPG LaTeX template.
 The template compiles with pdflatex.
 
 ![Preview](https://github.com/evanbergeron/DND-5e-LaTeX-Template/raw/master/scrot.png)
-
 
 ### Installation
 
 Just clone the repo. From terminal:
 
 ```sh
-$ git clone https://github.com/evanbergeron/DND-5e-LaTeX-Template.git 5e-template
-$ cd 5e-template
+$ git clone https://github.com/Krozark/RPG-LaTeX-Template.git
+$ cd RPG-Latex-Template
 $ pdflatex example.tex
 ```
 
@@ -38,6 +36,7 @@ Per default "bg-letter" and "bg-full" are loaded.
 
 ### Todo's
 
+ - add chapter
  - Consider implementing more complex tables for monsters, etc.
  - Clean up the table-preset
  - Create more elegant solution for spacing before and after boxes (using \vspace is rather rigid when two boxes follow in a row)
@@ -50,16 +49,3 @@ Per default "bg-letter" and "bg-full" are loaded.
 
  - Credit for the background image goes to http://lostandtaken.com/
 
-### Version
-0.5
-
-### License
-The MIT License (MIT)
-
-Copyright (c) 2016 Evan Bergeron
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

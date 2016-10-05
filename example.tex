@@ -1,5 +1,5 @@
 \documentclass[10pt,twoside,twocolumn]{article}
-\usepackage[bg-letter]{dnd} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
+\usepackage[bg-letter]{rpg} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 \usepackage[ngerman]{babel} % Trennungsregeln und autom. Überschriften in n. dt. RS
 \usepackage[utf8]{inputenc}
 
@@ -9,41 +9,42 @@
 
 % Your content goes here
 
-\section{Main Section}
+\section{Section}
 \lipsum[1] % filler text
 
-\subsection{Fun with boxes}
-\subsubsection{Even more fun!}
+\subsection{Subsection}
+\subsubsection{subsubsection}
 
-\begin{commentbox}{Neat Green Box!}
+\begin{commentbox}{commentbox}
 	\lipsum[1]
 \end{commentbox}
 
 \begin{quotebox}
+    quotebox
 	As you approach this template you get a sense that the blood and tears of many generations went into its making. A warm feeling welcomes you as you type your first words.
 \end{quotebox}
 
 \newpage % Acts as columbreak because of twocolumn option; for pagebreak use \clearpage
 
-% For more columns, you can say \begin{dndtable}[your options here}.
+% For more columns, you can say \begin{rpgtable}[your options here}.
 % For instance, if you wanted three columns, you could say
-% \begin{dndtable}{XXX}. The usual host of tabular parameters are
+% \begin{rpgtable}{XXX}. The usual host of tabular parameters are
 % aailable as well.
-\header{Nice table}
-\begin{dndtable}
+\header{rpgtable}
+\begin{rpgtable}
    	\textbf{Table head}  & \textbf{Table head} \\
    	Some value  & Some value \\
    	Some value  & Some value \\
    	Some value  & Some value
-\end{dndtable}
+\end{rpgtable}
 
-\begin{paperbox}{Do the Players need direction?}
+\begin{paperbox}{paperbox}
 	\lipsum[1]
 \end{paperbox}
 
 % You can optionally not include the background by saying
-% begin{monsterboxnobg}
-\begin{monsterbox}{Monster Foo}
+%\begin{rpgmonsterboxnobg}{monsterboxnob}
+\begin{rpgmonsterbox}{monsterbox}
 	\textit{Small metasyntatic variable (golbinoid), neutral evil}\\
 	\hline
 	\basics[%
@@ -64,18 +65,19 @@
 	languages = {Common Lisp, Erlang},
 	]
 	\hline \\[1mm]
-	\begin{monsteraction}[Monster-super-powers]
+	\begin{rpgmonsteraction}[Monster-super-powers]
 		This Monster has some serious superpowers!
-	\end{monsteraction}
-	\monstersection{Actions}
-	\begin{monsteraction}[Generate text]
+	\end{rpgmonsteraction}
+	\rpgmonstersection{Actions}
+	\begin{rpgmonsteraction}[Generate text]
 		This one can generate tremendous amounts of text! Though only when it wants to.
-	\end{monsteraction}
+	\end{rpgmonsteraction}
 
-	\begin{monsteraction}[More actions]
+	\begin{rpgmonsteraction}[More actions]
     See, here he goes again! Yet more text.
-	\end{monsteraction}
-\end{monsterbox}
+	\end{rpgmonsteraction}
+\end{rpgmonsterbox}
+%\end{rpgmonsterboxnobg}
 
 % End document
 \end{document}

@@ -13,7 +13,7 @@
 }
 
 % Monster box made to look like the Monster Manual NPC definitions
-\newtcolorbox{monsterboxnobg}[2][]{
+\newtcolorbox{rpgmonsterboxnobg}[2][]{
    enhanced,
    frame hidden,
    before skip=7pt plus2pt,
@@ -34,7 +34,7 @@
 }
 
 % new Monsterbox
-\newtcolorbox{monsterbox}[2][]{
+\newtcolorbox{rpgmonsterbox}[2][]{
 	enhanced,
 	frame hidden,
 	before skip=7pt plus2pt,
@@ -61,8 +61,8 @@
 
 
 % Define Monster subsection header style
-%\newcommand{\monstersection}[1]{\subsubsection*{#1}}
-\newcommand{\monstersection}[1]{
+%\newcommand{\rpgmonstersection}[1]{\subsubsection*{#1}}
+\newcommand{\rpgmonstersection}[1]{
 	{\par
 	\color{titlered}\normalfont\scshape\Large #1 \vspace{3pt}
 	\titleline{\color{titlered}\titlerule[0.6pt]}
@@ -72,7 +72,7 @@
 %\titleformat{\subsubsection}
 %{\color{titlered}\normalfont\scshape\Large}{\thesubsection}{1em}{}[{\color{titlered}\titlerule[0.5pt]\color{black}}]
 
-\newenvironment{monsteraction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
+\newenvironment{rpgmonsteraction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
 
 %
 % Macros for use within the monster environment

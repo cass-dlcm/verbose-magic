@@ -1,9 +1,10 @@
-% DND 5e LaTeX Style File
+% RPG Style File
 % Created by Evan Bergeron
 % Modified by Christopher Liu December 2015
 % Modified by Yannic Meyer Feb 2016
+% Modified by Barbier Maxime Oct 2016
 
-\ProvidesPackage{dnd}[2016/03/13]
+\ProvidesPackage{rpg}
 
 %
 % Prerequisite Packages
@@ -23,13 +24,13 @@
 \RequirePackage[most]{tcolorbox}  % used for some boxes
 
 % Load other modules of this package
-\usepackage{lib/dndmonster}
-\usepackage{lib/dndsections}
-\usepackage{lib/dndcomment}
-\usepackage{lib/dnditemtable}
-\usepackage{lib/dndtable}
-\usepackage{lib/dndquote}
-\usepackage{lib/dndpaperbox}
+\usepackage{lib/rpg-monster}
+\usepackage{lib/rpg-sections}
+\usepackage{lib/rpg-comment}
+\usepackage{lib/rpg-itemtable}
+\usepackage{lib/rpg-table}
+\usepackage{lib/rpg-quote}
+\usepackage{lib/rpg-paperbox}
 
 
 %
@@ -54,15 +55,15 @@
   % Determine background image
   \iftoggle{bool-bg-a4}{%		% Check if A4 option is selected
     \iftoggle{bool-bg-print}{%	% Check if print option is selected
-      \RequirePackage[a4,print]{lib/dndbackgroundimg}
+      \RequirePackage[a4,print]{lib/rpg-backgroundimg}
 		}{%
-      \RequirePackage[a4,full]{lib/dndbackgroundimg}
+      \RequirePackage[a4,full]{lib/rpg-backgroundimg}
 		}
 	}{%
     \iftoggle{bool-bg-print}{%	% Check if print option is selected
-      \RequirePackage[letter,print]{lib/dndbackgroundimg}
+      \RequirePackage[letter,print]{lib/rpg-backgroundimg}
 		}{%
-      \RequirePackage[letter,full]{lib/dndbackgroundimg}
+      \RequirePackage[letter,full]{lib/rpg-backgroundimg}
 		}
 	}
 }
@@ -116,7 +117,6 @@
 
 
 
-% Fancy DnD 5e-style hline
 \renewcommand{\hline}{
 \noindent
   \begin{tikzpicture}[]
