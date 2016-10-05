@@ -6,13 +6,15 @@
 
 
 % Adjust section and subsection colors and font (change 0em to 1em if you commented the removal of section numbering)
-\titleformat{\chapter}
-{\color{titlered}\normalfont\scshape\Huge}{\chaptertitlename \thechapter.}{1em}{\Huge}
+\titleformat{\chapter}[display]
+{\color{titlered}\normalfont\scshape\Huge}
+{\flushright \normalsize \color{titlered} \MakeUppercase{\chaptertitlename}{\fontsize{60}{60}\selectfont \color{titlered}\thechapter}}{0em}{\Huge}
 
-\titleformat{\section}
-{\color{titlered}\normalfont\scshape\huge}{\thesection}{1em}{}
+\titleformat{\section}[display]
+{\color{titlered}\normalfont\scshape\huge}{\thesection}{0em}{}
 
-\titleformat{\subsection}
+
+\titleformat{\subsection}[display]
 {\color{titlered}\normalfont\scshape\Large}{\thesubsection}{0em}{}[{\titleline{\color{undergold}\titlerule[1pt]}}]
 
 \titleformat{\subsubsection}
