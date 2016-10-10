@@ -3,7 +3,7 @@
 This is an attempt at a RPG LaTeX template.
 The template compiles with pdflatex.
 
-![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/example/scrot.png)
+![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/example/scrot.jpg)
 
 ### Installation
 
