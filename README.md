@@ -47,5 +47,6 @@ Per default "bg-letter" and "bg-full" are loaded.
 
 ### Image Credit
 
- - Credit for the background image goes to http://lostandtaken.com/
+ - Background : http://lostandtaken.com/
+ - Sword : http://opengameart.org/content/medieval-sword
 
