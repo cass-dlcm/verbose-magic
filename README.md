@@ -3,7 +3,11 @@
 This is an attempt at a RPG LaTeX template.
 The template compiles with pdflatex.
 
+### Book
 ![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/book.jpg)
+
+### Cards
+![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/cards.jpg)
 
 ### Installation
 
