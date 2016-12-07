@@ -3,7 +3,7 @@
 This is an attempt at a RPG LaTeX template.
 The template compiles with pdflatex.
 
-![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/example/scrot.jpg)
+![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/book.jpg)
 
 ### Installation
 
@@ -12,7 +12,7 @@ Just clone the repo. From terminal:
 ```sh
 $ git clone https://github.com/Krozark/RPG-LaTeX-Template.git
 $ cd RPG-Latex-Template
-$ pdflatex example.tex
+$ pdflatex book.tex
 ```
 
 If you don't have LaTeX installed, the following should help you out:
@@ -36,7 +36,6 @@ Per default "bg-letter" and "bg-full" are loaded.
 
 ### Todo's
 
- - add chapter
  - Consider implementing more complex tables for monsters, etc.
  - Clean up the table-preset
  - Create more elegant solution for spacing before and after boxes (using \vspace is rather rigid when two boxes follow in a row)

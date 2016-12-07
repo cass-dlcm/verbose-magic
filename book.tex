@@ -1,20 +1,24 @@
 \documentclass[10pt,twoside,twocolumn]{book}
-\usepackage[bg-letter]{rpg} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
+\usepackage[bg-letter]{lib/book} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
 
-%\title{RPG}
-%\author{Maxime BARBIER}
+\title{RPG Template}
+\date{\today}
+\author{Maxime BARBIER}
 
 % Start document
 \begin{document}
 \fontfamily{ppl}\selectfont % Set text font
+\frontmatter
+
+\maketitle
 
 \tableofcontents
 
 % Your content goes here
-
+\mainmatter
 \chapter{Chapter name}
 
 \section{Section name}
@@ -27,8 +31,11 @@
 	you can add some comments using this box
 \end{rpg-commentbox}
 
-\begin{rpg-quotebox}
-    rpg-quotebox\\
+\begin{rpg-warnbox}{rpg-warnbox name}
+	you can add some warnings using this box
+\end{rpg-warnbox}
+
+\begin{rpg-quotebox}{rpg-quotebox name}
     this is a quote box
 \end{rpg-quotebox}
 
