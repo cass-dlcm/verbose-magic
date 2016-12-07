@@ -13,6 +13,7 @@ Just clone the repo. From terminal:
 $ git clone https://github.com/Krozark/RPG-LaTeX-Template.git
 $ cd RPG-Latex-Template
 $ pdflatex book.tex
+$ pdflatex cards.tex
 ```
 
 If you don't have LaTeX installed, the following should help you out:

@@ -1,0 +1,70 @@
+\documentclass[a4paper,landscape]{article}
+
+\usepackage{lib/rpg-card}
+
+
+%   Dummy-Contents
+\newcommand{\scores}[8]{
+    \begin{tabular}{l r}
+        Cake (volume):&#1 table(s)\\
+        Cake (taste):&#2\ding{72}\\
+        Rest time:&#3\\
+        Originality:&#4/10\\
+        Hospitality:&#5\%\\
+        Timeliness:&#6/10\\
+        Luxury:&#7\ding{72}\\
+        Prayerfulness:&#8/10\\
+    \end{tabular}
+}
+
+\begin{document}
+\begin{center}
+    \pagestyle{empty}
+
+    \begin{tikzpicture}
+        \cardbackground{img/cat.jpg}
+        \cardtypeEssex
+        \cardtitle{Epping}
+        \cardcontent{Morning of Feast of St Joseph; we set off.}{\scores{0}{0}{12h}{7}{83}{10}{2}{7}}
+        \cardprice{2}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{img/cambridge.jpg}
+        \cardtypeCambridgeshire
+        \cardtitle{Cambridge}
+        \cardcontent{Evening of Holy Monday; we stay at the Margaret Beaufort Institute.}{\scores{0}{0}{12h}{7}{65}{6}{4}{10}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{img/isleham.jpg}
+        \cardtypeCambridgeshire
+        \cardtitle{Isleham}
+        \cardcontent{Morning of Spy Wednesday; a short rest.}{\scores{0}{0}{15h}{0}{70}{1}{0}{2}}
+        \cardprice{1}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{img/hare_street.jpg}
+        \cardtypeSuffolk
+        \cardtitle{Beck Row}
+        \cardcontent{Spy Wednesday; lunch stop.}{\scores{0}{0}{45m}{2}{72}{5}{4}{0}}
+        \cardprice{}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{img/olw.jpg}
+        \cardtypeNorfolk
+        \cardtitle{Slipper Chapel}
+        \cardcontent{Afternoon of Good Friday; we arrive at the Slipper Chapel!}{\scores{1}{1}{1h30m}{5}{90}{10}{0}{9}}
+        \cardprice{}
+        \cardborder
+    \end{tikzpicture}
+    
+\end{center}
+\end{document}
