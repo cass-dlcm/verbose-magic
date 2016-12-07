@@ -7,7 +7,7 @@ The template compiles with pdflatex.
 ![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/book.jpg)
 
 ### Cards
-![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/cards.jpg)
+![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/cards.png)
 
 ### Installation
 
