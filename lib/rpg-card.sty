@@ -1,6 +1,28 @@
-\ProvidesPackage{rpg-card}
+\ProvidesPackage{lib/rpg-card}
 
-\input{lib/card/libs.tex}
-\input{lib/card/colors.tex}
-\input{lib/card/tikzcards.tex}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% dependencies
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[margin=6mm,top=5mm]{geometry}
+\usepackage{anttor}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usetikzlibrary{shadows}
+\usepackage{pifont}
+\usepackage{fourier-orns}
+
+%%% internal
+\usepackage{lib/card/style}
+\usepackage{lib/card/colors}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% style
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\cardtypeMonster}{\cardtype{rpg_card_monsterbg}{Monster}{\includegraphics[width=0.5cm]{lib/card/img/monster-grasp.png}}}
 
