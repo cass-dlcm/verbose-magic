@@ -50,6 +50,14 @@
             };
         }
     },
+    %   Image for the default background
+    cardbackground/.style={
+        path picture={
+                \node at (0.5*\cardwidth,0.5*\cardheight) {
+                    \includegraphics[width=\cardwidth cm, height=\cardheight cm]{lib/card/img/bg.jpg}
+            };
+        }
+    },
 }
 
 %   TikZ grid
@@ -64,6 +72,7 @@
 
 % Background of the card
 \newcommand{\cardbackground}[1]{
+    \draw[cardcorners, cardbackground] \shapeCard;
     \draw[cardcorners, cardimage=#1] \shapeCard;
 }
 
@@ -103,7 +112,7 @@
 \newcommand{\cardcontent}[2]{
     \begin{scope}[even odd rule]
         \clip[cardcorners] \shapeCard;
-        \fill[elementcorners,rpg_card_contentbg] \shapeContentArea;
+        \fill[elementcorners,rpg_card_contentbg,opacity=.85] \shapeContentArea;
     \end{scope}
     \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,0.5*\cardheight-\textpadding) {
         \textit{\normalsize #1}
