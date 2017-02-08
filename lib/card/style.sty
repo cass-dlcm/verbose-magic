@@ -16,7 +16,8 @@
 \def\shapeLeftStripShort{(\strippadding,\cardheight-\strippadding-1) rectangle (\strippadding+\stripwidth,\cardheight+0.2)}
 \def\shapeRightStripShort{(\cardwidth-\stripwidth-\strippadding,\cardheight-\strippadding-1) rectangle (\cardwidth-\strippadding,\cardheight+0.2)}
 \def\shapeTitleArea{(2*\strippadding+\stripwidth,\cardheight-\strippadding) rectangle (\cardwidth-2*\strippadding-\stripwidth,\cardheight-2*\stripwidth)}
-\def\shapeContentArea{(2*\strippadding+\stripwidth,0.5*\cardheight) rectangle (\cardwidth+0.2,-0.2)}
+\def\shapeContentAreaHeight{0.50*\cardheight}
+\def\shapeContentArea{(2*\strippadding+\stripwidth,\shapeContentAreaHeight) rectangle (\cardwidth+0.2,-0.2)}
 
 
 % define style for tikz lib
@@ -41,6 +42,10 @@
     strip/.style={
         elementcorners,
         stripshadow
+    },
+    colorbg/.style={
+        elementcorners,
+        opacity=0.5
     },
     %   Image for the map motif
     cardimage/.style={
@@ -72,12 +77,11 @@
 
 % Background of the card
 \newcommand{\cardbackground}[1]{
-    \draw[cardcorners, cardbackground] \shapeCard;
     \draw[cardcorners, cardimage=#1] \shapeCard;
 }
 
 %   Category of the card
-\newcommand{\cardtype}[3]{
+\newcommand{\cardtype}[4]{
     %   First we fill the intersecting area
     %   The \clip command does not allow options, therefore 
     %   we have to use a scope to set the even odd rule.
@@ -87,13 +91,17 @@
         \clip[cardcorners] \shapeCard;
         % Fill shapeLeftStripLong and shapeLeftStripShort.
         % Since the even odd rule is set, only the card will be filled.
-        \fill[strip,#1] \shapeLeftStripLong node[rotate=90,above left=0.9mm,font=\normalsize] {
-            \color{white}\textsc{#2}
+        \fill[strip,cardbackground] \shapeLeftStripLong;
+        \fill[colorbg,#1] \shapeLeftStripLong;
+        \node[rotate=90,above left=0.9mm,font=\normalsize] at (\strippadding+\stripwidth,\cardheight-\strippadding-\strippadding-1){
+            \color{white}\textsc{#2}\scriptsize{#4}
         };
-        \fill[strip,#1] \shapeLeftStripShort;
+
+        \fill[strip,cardbackground] \shapeLeftStripShort;
+        \fill[colorbg,#1] \shapeLeftStripShort;
     \end{scope}
 
-    \node at (\strippadding+\stripwidth-0.28,\cardheight-\strippadding-\strippadding-0.37) {\color{white}#3};
+    \node at (\strippadding+\stripwidth-0.3,\cardheight-\strippadding-\strippadding-0.37) {\color{white}#3};
 }
 
 
@@ -114,10 +122,10 @@
         \clip[cardcorners] \shapeCard;
         \fill[elementcorners,rpg_card_contentbg,opacity=.85] \shapeContentArea;
     \end{scope}
-    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,0.5*\cardheight-\textpadding) {
-        \textit{\normalsize #1}
+    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,\shapeContentAreaHeight-\textpadding) {
+        \textit{\footnotesize #1}
     };
-    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,3) {
+    \node[below right, text width=(\cardwidth-2*\strippadding-\stripwidth-2*\textpadding-0.3)*1cm] at (2*\strippadding+\stripwidth+\textpadding,0.73*\shapeContentAreaHeight) {
         \vrule width \textwidth height 2pt \\[-2pt]
         \vspace{0.2cm}
         {\scriptsize #2}
@@ -128,7 +136,8 @@
 \newcommand{\cardprice}[1]{
     \begin{scope}[even odd rule]
         \clip[cardcorners] \shapeCard;
-        \fill[strip,rpg_card_pricebg] \shapeRightStripShort;
+        \fill[strip,cardbackground] \shapeRightStripShort;
+        \fill[colorbg,rpg_card_pricebg] \shapeRightStripShort;
     \end{scope}
     \node at (\cardwidth-0.5*\stripwidth-\strippadding,\titley-0.1) {\color{white}\textbf{#1}};
 }

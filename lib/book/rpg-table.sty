@@ -1,16 +1,26 @@
 % Table Header
 \newcommand{\header}[1]{{
-	\par\vspace*{8pt}
+	\par\vspace*{5pt}
 	\noindent
 	\sffamily\bfseries\scshape
 	#1}}
 
 % Table Environment
-\newenvironment{rpg-table}[1][XX]{
-	\par\vspace*{8pt}
+\newenvironment{rpg-table}[1][lX]{
+	\par\vspace*{5pt}
 	\noindent
 	\fontfamily{lmss}\selectfont %Select font
 	\rowcolors{1}{bgtan}{commentgreen} % Alternate colors
 	\tabularx{\linewidth}{#1}
 	}
-	{\endtabularx\vspace{8pt plus 1pt}\noindent} 
+	{\endtabularx\vspace{5pt plus 1pt}\noindent} 
+
+% Table Environment
+\newenvironment{rpg-table2}[1][lX]{
+	\par\vspace*{5pt}
+	\noindent
+	\fontfamily{lmss}\selectfont %Select font
+	\rowcolors{1}{bgtan}{commentblue} % Alternate colors
+	\tabularx{\linewidth}{#1}
+	}
+	{\endtabularx\vspace{5pt plus 1pt}\noindent} 

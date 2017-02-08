@@ -53,13 +53,22 @@
 % For instance, if you wanted three columns, you could say
 % \begin{rpg-table}[XXX]. The usual host of tabular parameters are
 % aailable as well.
-\header{rpg-table}
+\header{rpg-table with more columns}
 \begin{rpg-table}[XXX]
     \textbf{Table head 1}  & \textbf{Table head 2} & \textbf{Table head 3}\\
    	Some value  & Some value & Some value\\
    	Some value  & Some value & Some value\\
    	Some value  & Some value & Some value
 \end{rpg-table}
+
+\header{default rpg-table2 (2 column)}
+\begin{rpg-table2}
+   	\textbf{Table head 1}  & \textbf{Table head 2} \\
+   	Some value  & Some value \\
+   	Some value  & Some value \\
+   	Some value  & Some value
+\end{rpg-table2}
+
 
 \begin{rpg-paperbox}{rpg-paperbox}
 	you can add some text here
@@ -69,6 +78,7 @@
     \item first list item
     \item second list item
 \end{rpg-list}
+
 % You can optionally not include the background by saying
 %\begin{rpg-monsterboxnobg}{monsterboxnob}
 \begin{rpg-monsterbox}{rpg-monsterbox}
