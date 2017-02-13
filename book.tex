@@ -21,11 +21,13 @@
 \mainmatter
 \chapter{Chapter name}
 
-\section{Section name}
+\section{First Section}
 \lipsum[1] % filler text
 
-\subsection{Subsection name}
-\subsubsection{subsubsection name}
+\subsection{a subsection}
+\subsubsection{a subsubsection}
+
+\section{Some boxes}
 
 \begin{rpg-commentbox}{rpg-commentbox name}
 	you can add some comments using this box
@@ -39,8 +41,13 @@
     this is a quote box
 \end{rpg-quotebox}
 
+\begin{rpg-paperbox}{rpg-paperbox}
+	you can add some text here
+\end{rpg-paperbox}
+
 %\newpage % Acts as columbreak because of twocolumn option; for pagebreak use \clearpage
 
+\section{Some tables}
 \header{default rpg-table (2 column)}
 \begin{rpg-table}
    	\textbf{Table head 1}  & \textbf{Table head 2} \\
@@ -70,15 +77,13 @@
 \end{rpg-table2}
 
 
-\begin{rpg-paperbox}{rpg-paperbox}
-	you can add some text here
-\end{rpg-paperbox}
-
+\section{List}
 \begin{rpg-list}
     \item first list item
     \item second list item
 \end{rpg-list}
 
+\section{Monster}
 % You can optionally not include the background by saying
 %\begin{rpg-monsterboxnobg}{monsterboxnob}
 \begin{rpg-monsterbox}{rpg-monsterbox}
