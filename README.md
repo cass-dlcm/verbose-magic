@@ -54,4 +54,5 @@ Per default "bg-letter" and "bg-full" are loaded.
 
  - Background : http://lostandtaken.com/
  - Sword : http://opengameart.org/content/medieval-sword
+ - Icons : http://game-icons.net/
 
