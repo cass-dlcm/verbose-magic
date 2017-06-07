@@ -4,7 +4,7 @@
 % Modified by Yannic Meyer Feb 2016
 % Modified by Barbier Maxime Oct 2016
 
-\ProvidesPackage{rpg}
+\ProvidesPackage{lib/rpg-book}
 
 %
 % Prerequisite Packages
@@ -95,11 +95,15 @@
 \definecolor{commentblue}{HTML}{D2E9F8}	% e.g. used in table
 \definecolor{rulered}{HTML}{9C2B1B}		%e.g. used for triangular rule in statsblock
 \definecolor{lightgrey}{HTML}{B5B5B5}	%e.g. used for text in rpgsmallbox
+\definecolor{colorTODO}{HTML}{FF0000}	%e.g. used for TODO
+\definecolor{colorGlossary}{HTML}{a25299}	%e.g. used for key words
+\definecolor{colorCharacter}{HTML}{247bad}	%e.g. used for character names
+
 
 % Setup for custom footer
 \pagestyle{fancy}
 
-\footskip = 30pt %push the footer down so it fits with the decal from the bg-img
+\footskip = 28pt %push the footer down so it fits with the decal from the bg-img
 \fancyhfoffset[LE]{28pt} % push the footer left on even pages so it fits the decal
 \fancyhfoffset[RO]{30pt} % push the footer right on odd pages so it fits the decalbg-img
 \renewcommand{\headrulewidth}{0.0pt} %no rule for header

@@ -9,19 +9,28 @@
 
     \begin{tikzpicture}
         \cardbackground{img/cat.jpg}
-        \cardtypeMonster
+        \cardtypeMonster{Object type}
         \cardtitle{Made cat}
         \cardcontent{I will destroy you!}{Let me catch you ...}
-        \cardprice{2}
+        \cardprice{2} % this line is optional
         \cardborder
     \end{tikzpicture}
     \hspace{5mm}
     \begin{tikzpicture}
         \cardbackground{img/olw.jpg}
-        \cardtypeMonster
+        \cardtypeObject{object type}
         \cardtitle{Slipper Chapel}
         \cardcontent{}{}
-        \cardprice{1}
+        \cardprice{42}
+        \cardborder
+    \end{tikzpicture}
+    \hspace{5mm}
+    \begin{tikzpicture}
+        \cardbackground{img/axe.png}
+        \cardtypeEquipement{img/gloves.png}{Hand}
+        \cardtitle{Axe}
+        \cardcontent{}{}
+        \cardprice{12}
         \cardborder
     \end{tikzpicture}
     \hspace{5mm}
