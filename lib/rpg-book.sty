@@ -11,7 +11,6 @@
 %
 
 \RequirePackage{titlesec}         % Used to adjust (sub)section colors and fonts
-\RequirePackage{lipsum}           % Filler text
 \RequirePackage[cm]{fullpage}     % Small margins
 \RequirePackage{bookman}          % Closest built-in font I could find
 \RequirePackage[T1]{fontenc}
@@ -24,17 +23,17 @@
 \RequirePackage[most]{tcolorbox}  % used for some boxes
 \RequirePackage{color}
 \RequirePackage{xifthen}          % provides \isempty test
+\RequirePackage{amssymb}
 \usepackage[scale=0.90]{geometry}
+
 
 
 % Load other modules of this package
 \usepackage{lib/book/rpg-monster}
 \usepackage{lib/book/rpg-sections}
-\usepackage{lib/book/rpg-comment}
+\usepackage{lib/book/rpg-box}
 \usepackage{lib/book/rpg-list}
 \usepackage{lib/book/rpg-table}
-\usepackage{lib/book/rpg-quote}
-\usepackage{lib/book/rpg-paperbox}
 
 
 %
@@ -94,7 +93,7 @@
 \definecolor{commentred}{HTML}{E5C1C1} % e.g. used in item tables instead of the green
 \definecolor{commentblue}{HTML}{D2E9F8}	% e.g. used in table
 \definecolor{rulered}{HTML}{9C2B1B}		%e.g. used for triangular rule in statsblock
-\definecolor{lightgrey}{HTML}{B5B5B5}	%e.g. used for text in rpgsmallbox
+\definecolor{lightgrey}{HTML}{C5C5C5}	%e.g. used for text in rpgsmallbox
 \definecolor{colorTODO}{HTML}{FF0000}	%e.g. used for TODO
 \definecolor{colorGlossary}{HTML}{a25299}	%e.g. used for key words
 \definecolor{colorCharacter}{HTML}{247bad}	%e.g. used for character names
@@ -139,6 +138,7 @@
     \draw [rulered, fill=rulered] (0, 0) --(0,0.1) -- (\textwidth, 0.08);
   \end{tikzpicture}
 }
+
 
 
 % Either hilariously, or infuriatingly, the \ifcommandkey

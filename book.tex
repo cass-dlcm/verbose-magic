@@ -3,6 +3,8 @@
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{lipsum}
 
 \title{RPG Template}
 \date{\today}
@@ -14,8 +16,9 @@
 \frontmatter
 
 \maketitle
-
+\begin{multicols}{2}
 \tableofcontents
+\end{multicols}
 
 % Your content goes here
 \mainmatter
@@ -36,6 +39,10 @@
 \begin{rpg-warnbox}{rpg-warnbox name}
 	you can add some warnings using this box
 \end{rpg-warnbox}
+
+\begin{rpg-suggestionbox}{rpg-suggestionbox name}
+	you can add some suggestion using this box
+\end{rpg-suggestionbox}
 
 \begin{rpg-quotebox}{rpg-quotebox name}
     this is a quote box

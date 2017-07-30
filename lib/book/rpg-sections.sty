@@ -6,16 +6,31 @@
 
 
 % Adjust section and subsection colors and font (change 0em to 1em if you commented the removal of section numbering)
-\titleformat{\chapter}[display]
+%\titleformat{} % cmd
+%[] % shape : hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+%{} % format
+%{} % label
+%{} % sep
+%{} % before code
+%[] % after code
+
+\titleformat{\chapter}
+[display]
 {\color{titlered}\normalfont\scshape\Huge}
-{\flushright \normalsize \color{titlered} \MakeUppercase{\chaptertitlename}{\fontsize{60}{60}\selectfont \color{titlered}\thechapter}}{0em}{\Huge}
+{\flushright \normalsize \color{titlered} \MakeUppercase{\chaptertitlename}{\fontsize{60}{60}\selectfont \color{titlered}\thechapter}}
+{0em}
+{\Huge}
+[{\titleline{\color{undergold}\titlerule[2pt]}}]
 
-\titleformat{\section}[display]
-{\color{titlered}\normalfont\scshape\huge}{\thesection}{0em}{}
+
+\titleformat{\section}%[block]
+{\color{titlered}\normalfont\scshape\huge}{\thesection}{0.5em}{}
+[{\titleline{\color{undergold}\titlerule[0.5pt]}}]
 
 
-\titleformat{\subsection}[display]
-{\color{titlered}\normalfont\scshape\Large}{\thesubsection}{0em}{}[{\titleline{\color{undergold}\titlerule[1pt]}}]
+\titleformat{\subsection}%[block]
+{\color{titlered}\normalfont\scshape\LARGE}{\thesubsection}{0.5em}{$\bigstar$ }
+%[{\titleline{\color{undergold}\titlerule[1pt]}}]
 
 \titleformat{\subsubsection}
-{\color{titlered}\normalfont\scshape\large}{\thesubsubsection}{0em}{}[]
+{\color{titlered}\normalfont\scshape\Large}{\thesubsubsection}{0em}{$\blacktriangleright$ }[]
