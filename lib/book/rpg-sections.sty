@@ -1,9 +1,13 @@
-%Remove Numbering from section (If you want Numbering on the sections comment the following three lines and change the "0em" separation-definitions in the lower part to 1em)
-%\renewcommand\thechapter{}
-%\renewcommand\thesection{}
-%\renewcommand\thesubsection{}
-%\renewcommand\thesubsubsection{}
+\RequirePackage[titles]{tocloft}
+\RequirePackage{titlesec}	% Used to adjust (sub)section formatting
+\RequirePackage{amssymb}
 
+\iftoggle{multitoc}{%
+  \RequirePackage[toc]{multitoc}
+}{}
+
+%Remove Numbering (If you want Numbering set secnumdepth to the appropriate depth)
+%\setcounter{secnumdepth}{-1}
 
 % Adjust section and subsection colors and font (change 0em to 1em if you commented the removal of section numbering)
 %\titleformat{} % cmd
@@ -14,9 +18,10 @@
 %{} % before code
 %[] % after code
 
+
 \titleformat{\chapter}
 [display]
-{\color{title1}\normalfont\scshape\Huge}
+{\color{title1}\rpg@TitleFont\Huge}
 {\flushright \normalsize \color{title1} \MakeUppercase{\chaptertitlename}{\fontsize{60}{60}\selectfont \color{title1}\thechapter}}
 {0em}
 {\Huge}
@@ -24,16 +29,31 @@
 
 
 \titleformat{\section}%[block]
-{\color{title1}\normalfont\scshape\huge}{\thesection}{0.5em}{}
+{\color{title1}\rpg@TitleFont\huge}{\thesection}{0.5em}{}
 [{\titleline{\color{undergold}\titlerule[0.5pt]}}]
 
 
 \titleformat{\subsection}%[block]
-{\color{title2}\normalfont\scshape\LARGE}{\thesubsection}{0.5em}{$\bigstar$ }
+{\color{title2}\rpg@TitleFont\LARGE}{\thesubsection}{0.5em}{$\bigstar$ }
 [{\titleline{\color{title2}\titlerule[0.5pt]}}]
 
 \titleformat{\subsubsection}
-{\color{title3}\normalfont\scshape\Large}{\thesubsubsection}{0em}{$\blacktriangleright$ }[]
+{\color{title3}\rpg@TitleFont\Large}{\thesubsubsection}{0em}{$\blacktriangleright$ }[]
 
 \titleformat{\paragraph}
-{\color{title3}\normalfont\scshape\normalsize\large}{\theparagraph}{0em}{} 
+{\color{title3}\rpg@TitleFont\normalsize\large}{\theparagraph}{0em}{} 
+
+\titleformat{\subparagraph}[runin]
+{\normalfont\normalsize\bfseries\slshape}
+{\thesubparagraph\quad}
+{0pt}
+{}
+[.]
+
+\titlespacing*{\subparagraph}{\parindent}{\parskip}{\wordsep}
+
+% Special command for magic items, traps, and the like.
+\newcommand{\subtitlesection}[2]{
+    \subsubsection{#1}\vspace{-1ex}
+    \textit{#2}\vspace{1ex}\par
+}

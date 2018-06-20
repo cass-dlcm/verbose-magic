@@ -6,8 +6,8 @@
 	left=8pt,
 	right=8pt,
 	arc=0mm,
-	fonttitle=\fontfamily{fosj}\selectfont\scshape\bfseries\color{black},
-	fontupper=\fontfamily{lmss}\selectfont,
+	fonttitle=\rpg@BoxTitleFont,
+	fontupper=\rpg@BoxBodyFont,
     title=#1,
     colback={#2!75!white},
     colframe={#2!75!black},
@@ -65,8 +65,8 @@
 	boxsep=0.25ex,
 	left=8pt,
 	right=8pt,
-	fonttitle=\fontfamily{fosj}\selectfont\scshape\bfseries\color{black},
-	fontupper=\fontfamily{lmss}\selectfont,
+	fonttitle=\rpg@BoxTitleFont,
+	fontupper=\rpg@BoxBodyFont,
 	title=Exemple,
 	arc=0mm,
 	borderline north={1pt}{-0.5pt}{black},
@@ -104,10 +104,10 @@
 	colframe=bgtan,
 	colbacktitle=bgtan,
 	arc=0mm,
-	fonttitle=\fontfamily{fosj}\selectfont\scshape\bfseries\color{black},
+	fonttitle=\rpg@BoxTitleFont,
 	borderline west={1pt}{-0.5pt}{title1},
 	borderline east={1pt}{-0.5pt}{title1},
-	fontupper = \fontfamily{lmss}\selectfont,
+	fontupper=\rpg@BoxBodyFont,
 	%title=#2,
 	overlay={
 		\foreach \n in {north east,north west,south east,south west}
@@ -131,14 +131,3 @@
 }
 
 
-
-
-%
-% Old implementation using mdframed
-%
-%\newenvironment{commentbox}[1]
-%{\fontfamily{lmss}\selectfont\begin{mdframed}[frametitle={#1},
-%                                          frametitlefont=\fontfamily{fosj}\selectfont\scshape\bfseries\color{black},
-%                                              linecolor=commentgreen,
-%                                              backgroundcolor=commentgreen]}
-%{\end{mdframed}}

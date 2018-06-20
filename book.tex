@@ -16,6 +16,7 @@
 \frontmatter
 
 \maketitle
+
 \begin{multicols}{2}
 \tableofcontents
 \end{multicols}
@@ -25,7 +26,7 @@
 \chapter{Chapter name}
 
 \section{First Section}
-\lipsum[1] % filler text
+\lipsum[2] % filler text
 
 \subsection{a subsection}
 \subsubsection{a subsubsection}
@@ -93,42 +94,167 @@
 \section{Monster}
 % You can optionally not include the background by saying
 %\begin{rpg-monsterboxnobg}{monsterboxnob}
-\begin{rpg-monsterbox}{rpg-monsterbox}
+\begin{monsterbox}{rpg-monsterbox}
 	\textit{Small metasyntatic variable (golbinoid), neutral evil}\\
 	\rpghline
 	\basics[%
 	armorclass = 12,
-	hitpoints  = 16 (3d8 + 3),
+    hitpoints  = \rpgdice{3d8 + 3},
 	speed      = 50 t
 	]
-	\rpghline
+	\rpghline%
 	\stats[ % This stat command will autocomplete the modifier for you
     STR = 12, 
     DEX = 7
 	]
-	\rpghline
+	\rpghline%
 	\details[%
 	% If you want to use commas in these sections, enclose the
 	% description in braces.
 	% I'm so sorry.
 	languages = {Common Lisp, Erlang},
 	]
-	\rpghline \\[1mm]
+	\rpghline%
 	\begin{rpg-monsteraction}[rpg-monsteraction]
 		This Monster has some serious superpowers!
 	\end{rpg-monsteraction}
 
 	\rpgmonstersection{rpgmonstersection}
-	\begin{rpg-monsteraction}[rpm-monsteraction]
+	\begin{rpg-monsteraction}[rpg-monsteraction]
 		This one can generate tremendous amounts of text! Though only when it wants to.
 	\end{rpg-monsteraction}
 
 	\begin{rpg-monsteraction}[rpg-monsteraction]
     See, here he goes again! Yet more text.
 	\end{rpg-monsteraction}
-\end{rpg-monsterbox}
+\end{monsterbox}
 
-\chapter{Chapter name}
+\begin{rpg-spell}
+	{Beautiful Typesetting}
+	{4th-level illusion}
+	{1 action}
+	{5 feet}
+	{S, M (ink and parchment, which the spell consumes)}
+	{Until dispelled}
+	You are able to transform a written message of any length into a beautiful scroll. All creatures within range that can see the scroll must make a wisdom saving throw or be charmed by you until the spell ends.
+
+	While the creature is charmed by you, they cannot take their eyes off the scroll and cannot willingly move away from the scroll. Also, the targets can make a wisdom saving throw at the end of each of their turns. On a success, they are no longer charmed.
+\end{rpg-spell}
+
+\chapter{Colors}
+
+This package provides several global color variables to style \lstinline!rpg-commentbox!, \lstinline!rpg-quotebox!, \lstinline!rpg-examplebox!, and \lstinline!rpg-table! environments.
+
+
+TODO
+
+%\begin{rpgtable}[lX]
+%  \textbf{Color}         & \textbf{Description} \\
+%  \lstinline!commentboxcolor! & Controls \lstinline!commentbox! background. \\
+%  \lstinline!paperboxcolor!   & Controls \lstinline!paperbox! background. \\
+%  \lstinline!quoteboxcolor!   & Controls \lstinline!quotebox! background. \\
+%  \lstinline!tablecolor!      & Controls background of even \lstinline!rpgtable! rows. \\
+%\end{rpgtable}
+%
+%See Table~\ref{tab:colors} for a list of accent colors that match the core books.
+%
+%\begin{table*}
+%  \begin{rpgtable}[XX]
+%    \textbf{Color}                            & \textbf{Description} \\
+%    \lstinline!commentgreen!                      & Light green used in PHB Part 1 \\
+%    \lstinline!commentblue!                       & Light cyan used in PHB Part 2 \\
+%    \lstinline!PhbMauve!                           & Pale purple used in PHB Part 3 \\
+%    \lstinline!PhbTan!                             & Light brown used in PHB appendix \\
+%    \lstinline!DmgLavender!                        & Pale purple used in DMG Part 1 \\
+%    \lstinline!DmgCoral!                           & Orange-pink used in DMG Part 2 \\
+%    \lstinline!DmgSlateGray! (\lstinline!DmgSlateGrey!) & Blue-gray used in PHB Part 3 \\
+%    \lstinline!DmgLilac!                           & Purple-gray used in DMG appendix \\
+%  \end{rpgtable}
+%  \caption{Colors supported by this package}%
+%  \label{tab:colors}
+%\end{table*}
+%
+%\begin{itemize}
+%  \item Use \lstinline!\setthemecolor[<color>]! to set \lstinline!themecolor!, \lstinline!commentcolor!, \lstinline!paperboxcolor!, and \lstinline!tablecolor! to a specific color.
+%  \item Calling \lstinline!\setthemecolor! without an argument sets those colors to the current \lstinline!themecolor!.
+%  \item \lstinline!commentbox!, \lstinline!rpgtable!, \lstinline!paperbox!, and \lstinline!quoteboxcolor! also accept an optional color argument to set the color for a single instance.
+%\end{itemize}
+%
+%\subsection{Examples}
+%
+%\subsubsection{Using \lstinline!themecolor!}
+%
+%\begin{lstlisting}
+%\setthemecolor[PhbMauve]
+%
+%\begin{paperbox}{Example}
+%  \lipsum[2]
+%\end{paperbox}
+%
+%\setthemecolor[PhbLightCyan]
+%
+%\header{Example}
+%\begin{rpg-table}[cX]
+%  \textbf{d8} & \textbf{Item} \\
+%  1           & Small wooden button \\
+%  2           & Red feather \\
+%  3           & Human tooth \\
+%  4           & Vial of green liquid \\
+%  6           & Tasty biscuit \\
+%  7           & Broken axe handle \\
+%  8           & Tarnished silver locket \\
+%\end{rpg-table}
+%\end{lstlisting}
+%
+%\begingroup
+%\setthemecolor[PhbMauve]
+%
+%\begin{paperbox}{Example}
+%  \lipsum[2]
+%\end{paperbox}
+%
+%\setthemecolor[PhbLightCyan]
+%
+%\header{Example}
+%\begin{rpgtable}[cX]
+%  \textbf{d8} & \textbf{Item} \\
+%  1           & Small wooden button \\
+%  2           & Red feather \\
+%  3           & Human tooth \\
+%  4           & Vial of green liquid \\
+%  6           & Tasty biscuit \\
+%  7           & Broken axe handle \\
+%  8           & Tarnished silver locket \\
+%\end{rpgtable}
+%\endgroup
+%
+%\subsubsection{Using element color arguments}
+%
+%\begin{lstlisting}
+%\begin{rpgtable}[cX][DmgCoral]
+%  \textbf{d8} & \textbf{Item} \\
+%  1           & Small wooden button \\
+%  2           & Red feather \\
+%  3           & Human tooth \\
+%  4           & Vial of green liquid \\
+%  6           & Tasty biscuit \\
+%  7           & Broken axe handle \\
+%  8           & Tarnished silver locket \\
+%\end{rpgtable}
+%\end{lstlisting}
+%
+%\begin{rpgtable}[cX][DmgCoral]
+%  \textbf{d8} & \textbf{Item} \\
+%  1           & Small wooden button \\
+%  2           & Red feather \\
+%  3           & Human tooth \\
+%  4           & Vial of green liquid \\
+%  6           & Tasty biscuit \\
+%  7           & Broken axe handle \\
+%  8           & Tarnished silver locket \\
+%\end{rpgtable}
+
+
 
 % End document
 \end{document}

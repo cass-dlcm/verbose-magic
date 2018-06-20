@@ -10,136 +10,159 @@
 % Prerequisite Packages
 %
 
-\RequirePackage{titlesec}         % Used to adjust (sub)section colors and fonts
-\RequirePackage[cm]{fullpage}     % Small margins
-\RequirePackage{bookman}          % Closest built-in font I could find
-\RequirePackage[T1]{fontenc}
+% Set a different geometry with \newgeometry
+\usepackage[
+  bindingoffset=15pt, % .2in
+  hmargin=50pt,       % .7in
+  top=40pt,           % .55in
+  bottom=50pt,        % .7in
+  footskip=30pt,      % makes the footer text line up with the graphic
+  scale=0.90,
+]{geometry}
+
+% Loaded before tikz to avoid package option conflict with pgf.
 \RequirePackage[table]{xcolor}
+
+\RequirePackage[cm]{fullpage}     % Small margins
+
 \RequirePackage{array}
-\RequirePackage{tabularx}
-%\RequirePackage{tikz}
+\RequirePackage{calc}
+\RequirePackage{enumitem}
+\RequirePackage{ifluatex}
 \RequirePackage{keycommand}
-\RequirePackage{fancyhdr} 		  % Adaptation of the footers
+\RequirePackage{microtype}        % Improve ragged2e hyphenation and overfull boxes
+\RequirePackage{ragged2e}
+\RequirePackage{tabularx}
 \RequirePackage[most]{tcolorbox}  % used for some boxes
-\RequirePackage{color}
-\RequirePackage{xifthen}          % provides \isempty test
-\RequirePackage{amssymb}
-\usepackage[scale=0.90]{geometry}
+\RequirePackage{tikz}
+\RequirePackage{xkeyval}
+\RequirePackage{xparse}
 
+\ifluatex
+  \RequirePackage{luacolor}
+\fi
 
-% Load other modules of this package
-\usepackage{lib/book/rpg-monster}
-\usepackage{lib/book/rpg-sections}
-\usepackage{lib/book/rpg-box}
-\usepackage{lib/book/rpg-list}
-\usepackage{lib/book/rpg-table}
+% \rpg@deprecate{<command or environment>}{<version>}[<suggestion>]
+\DeclareDocumentCommand{\rpg@deprecate}{m m o}{%
+  \PackageWarning{rpg}{#1 is deprecated and will be removed in version #2.\IfNoValueF{#3}{ #3}}
+}
 
 
 %
 % Options
 %
 
-% 'bg-letter-img','bg-letter-print' and 'bg-none' options
-\newtoggle{bool-bg-a4}
-\newtoggle{bool-bg-print}
-\newtoggle{bool-bg-none}
-\DeclareOption{bg-none}{\toggletrue{bool-bg-none}}
-\DeclareOption{bg-a4}{\toggletrue{bool-bg-a4}}
-\DeclareOption{bg-letter}{\togglefalse{bool-bg-a4}}
-\DeclareOption{bg-print}{\toggletrue{bool-bg-print}}
-\DeclareOption{bg-full}{\togglefalse{bool-bg-print}}
+\newtoggle{bool-bg}
+\newtoggle{bool-footer-scroll}
+\DeclareOptionX{bg}[full]{%
+  % This macro call looks complicated, but simply sets up a case environment
+  % to process choices. Refer to the xkeyval documentation for details.
+  \XKV@cc*+[\val\index]{#1}{full,none,print}{%
+    \ifcase\index\relax
+    % full
+    \toggletrue{bool-bg}
+    \toggletrue{bool-footer-scroll}
+    \or
+    % none
+    \togglefalse{bool-bg}
+    \togglefalse{bool-footer-scroll}
+    \or
+    % print
+    \togglefalse{bool-bg}
+    \toggletrue{bool-footer-scroll}
+    \fi
+  }{%
+    \PackageWarning{rpg}{\val\ is not a valid choice for bg and was ignored}
+  }
+}
+
+% Legacy bg option variants.
+\DeclareOptionX{bg-full}{%
+  \rpg@deprecate{bg-full}{0.7}[Use bg=full instead.]
+  \toggletrue{bool-bg}
+  \toggletrue{bool-footer-scroll}
+}
+\DeclareOptionX{bg-none}{%
+  \rpg@deprecate{bg-none}{0.7}[Use bg=none instead.]
+  \togglefalse{bool-bg}
+  \togglefalse{bool-footer-scroll}
+}
+\DeclareOptionX{bg-print}{%
+  \rpg@deprecate{bg-print}{0.7}[Use bg=print instead.]
+  \togglefalse{bool-bg}
+  \toggletrue{bool-footer-scroll}
+}
+\DeclareOptionX{bg-a4}{\rpg@deprecate{bg-a4}{0.7}[Remove call to this package option.]}
+\DeclareOptionX{bg-letter}{\rpg@deprecate{bg-letter}{0.7}[Remove call to this package option.]}
+
+% Toggle justification (official books are flush left).
+\newtoggle{justified}
+\DeclareOptionX{justified}{\toggletrue{justified}}
+
+% Toggle multitoc.
+\newtoggle{multitoc}
+\settoggle{multitoc}{true}
+\DeclareOptionX{nomultitoc}{\togglefalse{multitoc}}
 
 % Default Settings
-\ExecuteOptions{bg-letter, bg-full}
-\ProcessOptions\relax
+\ExecuteOptionsX{bg=full}
+\ProcessOptionsX\relax
 
-\nottoggle{bool-bg-none}{
-  % Determine background image
-  \iftoggle{bool-bg-a4}{%		% Check if A4 option is selected
-    \iftoggle{bool-bg-print}{%	% Check if print option is selected
-      \RequirePackage[a4,print]{lib/book/rpg-backgroundimg}
-		}{%
-      \RequirePackage[a4,full]{lib/book/rpg-backgroundimg}
-		}
-	}{%
-    \iftoggle{bool-bg-print}{%	% Check if print option is selected
-      \RequirePackage[letter,print]{lib/book/rpg-backgroundimg}
-		}{%
-      \RequirePackage[letter,full]{lib/book/rpg-backgroundimg}
-		}
-	}
-}
+
+% Load other modules of this package
+\RequirePackage{lib/book/rpg-box}
+\RequirePackage{lib/book/rpg-colors}
+\RequirePackage{lib/book/rpg-fonts}     % font definitions
+
+\RequirePackage{lib/book/rpg-header}    % fancy headers and footers
+\RequirePackage{lib/book/rpg-monster}
+\RequirePackage{lib/book/rpg-sections}
+\RequirePackage{lib/book/rpg-strings}   % Load document strings
+\RequirePackage{lib/book/rpg-spell}
+
+\RequirePackage{lib/book/rpg-list}
+\RequirePackage{lib/book/rpg-table}
+
+% Set paragraph and line spacing
+\linespread{1.1}%
+\setlength{\parindent}{1em}
+\setlength{\RaggedRightRightskip}{0pt plus 1cm}
+\setlength{\RaggedRightParindent}{\parindent}
+\hyphenpenalty=1000  % Fewer hyphens
+
+% Set left justification if not justified
+\nottoggle{justified}{\RaggedRight}
 
 %
 % Style Parameters
 %
 
+% Disable space between paragraphs.
+\setlength{\parskip}{0pt}
+
 % Font environment
-\newenvironment{lmss}{\fontfamily{lmss}\selectfont}{}
+\newenvironment{lmss}{%
+  \rpg@deprecate{lmss}{0.7}
+  \fontfamily{lmss}\selectfont
+  }{}
 
 % Columns setup
-\setlength{\columnsep}{1cm}
+\setlength{\columnsep}{25pt}  % .35in
 
-% Define colors, sampled from the books.
-\definecolor{bgtan}{HTML}{F7F2E5}		% e.g. used for background and quotebox
-\definecolor{title1}{HTML}{58180D}	% e.g. used for titles
-\definecolor{title2}{HTML}{0d2b58}	% e.g. used for titles
-\definecolor{title3}{HTML}{58390d}	% e.g. used for titles
-\definecolor{undergold}{HTML}{C9AD6A}	% e.g. used for titlerules
-\definecolor{uppergold}{HTML}{B89A67}	%e.g. used for pagenumbers and footer
-\definecolor{puregold}{HTML}{E69A28}	%e.g. used for top line in newer monsterbox
-\definecolor{monstertan}{HTML}{FDF1DC}	%e.g. used for newer monsterblock
-\definecolor{monstertandark}{HTML}{F0DBB5}	%e.g. used for older monsterbox
-\definecolor{commentgreen}{HTML}{E0E5C1} % e.g. used in table and green commentbox
-\definecolor{commentred}{HTML}{E5C1C1} % e.g. used in item tables instead of the green
-\definecolor{commentblue}{HTML}{D2E9F8}	% e.g. used in table
-\definecolor{rulered}{HTML}{9C2B1B}		%e.g. used for triangular rule in statsblock
-\definecolor{lightgrey}{HTML}{C5C5C5}	%e.g. used for text in rpgsmallbox
-\definecolor{colorTODO}{HTML}{FF0000}	%e.g. used for TODO
-\definecolor{colorGlossary}{HTML}{a25299}	%e.g. used for key words
-\definecolor{colorCharacter}{HTML}{247bad}	%e.g. used for character names
-
-
-% Setup for custom footer
-\pagestyle{fancy}
-
-\footskip = 28pt %push the footer down so it fits with the decal from the bg-img
-\fancyhfoffset[LE]{28pt} % push the footer left on even pages so it fits the decal
-\fancyhfoffset[RO]{30pt} % push the footer right on odd pages so it fits the decalbg-img
-\renewcommand{\headrulewidth}{0.0pt} %no rule for header
-\renewcommand{\footrulewidth}{0.0pt} %no rule for footer
-
-\fancyhf{}% Clear header/footer
-
-\fancyfoot[LE]{
-	\textcolor{uppergold}{\thepage}
-	\hspace*{0.9cm}
-	\raisebox{12pt}{\textsc{\textcolor{uppergold}{\nouppercase\leftmark}}}
-	}
-
-\fancyfoot[RO]{
-	\raisebox{12pt}{\textsc{\textcolor{uppergold}{\nouppercase\rightmark}}}
-	\hspace*{1cm}
-	\textcolor{uppergold}{\thepage}
-	}
-
-% pages and right on odd pages
-%\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\thechapter.\ #1}}{}}
-
-\fancypagestyle{plain}{
-  \pagestyle{fancy}
-  \renewcommand{\headrulewidth}{0pt}
-}
+% Customize itemize environment.
+\setlist{leftmargin=1em}
+\setitemize{noitemsep,topsep=0.5ex}
+\renewcommand{\labelitemi}{\raisebox{0.25ex}{\tiny{\( \bullet \)}}}
 
 
 
 \newcommand{\rpghline}{
-\noindent
+  \noindent
   \begin{tikzpicture}[]
-    \draw [rulered, fill=rulered] (0, 0) --(0,0.1) -- (\textwidth, 0.08);
-  \end{tikzpicture}
+    \draw [rulered, fill=rulered] (0, 0) --(0,0.1) -- (\textwidth, 0.05);
+  \end{tikzpicture}%
+  \par%
 }
-
 
 
 % Either hilariously, or infuriatingly, the \ifcommandkey
