@@ -43,8 +43,8 @@
    right=2.15mm,
    arc=0mm,
    opacityback=0,
-   colframe=titlered,
-   fonttitle=\scshape\bfseries\color{titlered}\Large,
+   colframe=title1,
+   fonttitle=\scshape\bfseries\color{title1}\Large,
    fontupper=\fontfamily{lmss}\selectfont,
    title=#2,
    after={\vspace{7pt plus 1pt}\noindent},
@@ -63,14 +63,14 @@
 	left=2.5mm,
 	right=2.15mm,
 	arc=0mm,
-	borderline north={4pt}{0pt}{titlered},
+	borderline north={4pt}{0pt}{title1},
 	borderline north={2.5pt}{0.75pt}{puregold},
-	borderline south={4pt}{0pt}{titlered},
+	borderline south={4pt}{0pt}{title1},
 	borderline south={2.5pt}{0.75pt}{puregold},
 	colback=monstertan,
 	colbacktitle=monstertan,
-	colframe=titlered,
-	fonttitle=\scshape\bfseries\color{titlered}\Large,
+	colframe=title1,
+	fonttitle=\scshape\bfseries\color{title1}\Large,
 	fontupper=\fontfamily{lmss}\selectfont,
 	title=#2,
 	after={\vspace{7pt plus 1pt}\noindent},
@@ -82,13 +82,13 @@
 %\newcommand{\rpg-monstersection}[1]{\subsubsection*{#1}}
 \newcommand{\rpgmonstersection}[1]{
 	{\par
-	\color{titlered}\normalfont\scshape\Large #1 \vspace{3pt}
-	\titleline{\color{titlered}\titlerule[0.6pt]}
+	\color{title1}\normalfont\scshape\Large #1 \vspace{3pt}
+	\titleline{\color{title1}\titlerule[0.6pt]}
 	\par\medskip}
 	}
 %\titlespacing*{\subsubsection}{0pt}{*0.5}{5pt}
 %\titleformat{\subsubsection}
-%{\color{titlered}\normalfont\scshape\Large}{\thesubsection}{1em}{}[{\color{titlered}\titlerule[0.5pt]\color{black}}]
+%{\color{title1}\normalfont\scshape\Large}{\thesubsection}{1em}{}[{\color{title1}\titlerule[0.5pt]\color{black}}]
 
 \newenvironment{rpg-monsteraction}[1][\unskip]{\emph{\textbf{#1.}}}{\vspace{0.5em}}
 
@@ -96,7 +96,7 @@
 % Macros for use within the monster environment
 %
 \newkeycommand\basics[armorclass=0, hitpoints=0, speed=0]{%
-	\color{titlered}
+	\color{title1}
 	\textbf{Armor Class} \commandkey{armorclass}\\
 	\textbf{Hit Points} \commandkey{hitpoints}\\
 	\textbf{Speed} \commandkey{speed}\\

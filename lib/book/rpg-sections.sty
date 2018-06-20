@@ -16,21 +16,24 @@
 
 \titleformat{\chapter}
 [display]
-{\color{titlered}\normalfont\scshape\Huge}
-{\flushright \normalsize \color{titlered} \MakeUppercase{\chaptertitlename}{\fontsize{60}{60}\selectfont \color{titlered}\thechapter}}
+{\color{title1}\normalfont\scshape\Huge}
+{\flushright \normalsize \color{title1} \MakeUppercase{\chaptertitlename}{\fontsize{60}{60}\selectfont \color{title1}\thechapter}}
 {0em}
 {\Huge}
 [{\titleline{\color{undergold}\titlerule[2pt]}}]
 
 
 \titleformat{\section}%[block]
-{\color{titlered}\normalfont\scshape\huge}{\thesection}{0.5em}{}
+{\color{title1}\normalfont\scshape\huge}{\thesection}{0.5em}{}
 [{\titleline{\color{undergold}\titlerule[0.5pt]}}]
 
 
 \titleformat{\subsection}%[block]
-{\color{titlered}\normalfont\scshape\LARGE}{\thesubsection}{0.5em}{$\bigstar$ }
-%[{\titleline{\color{undergold}\titlerule[1pt]}}]
+{\color{title2}\normalfont\scshape\LARGE}{\thesubsection}{0.5em}{$\bigstar$ }
+[{\titleline{\color{title2}\titlerule[0.5pt]}}]
 
 \titleformat{\subsubsection}
-{\color{titlered}\normalfont\scshape\Large}{\thesubsubsection}{0em}{$\blacktriangleright$ }[]
+{\color{title3}\normalfont\scshape\Large}{\thesubsubsection}{0em}{$\blacktriangleright$ }[]
+
+\titleformat{\paragraph}
+{\color{title3}\normalfont\scshape\normalsize\large}{\theparagraph}{0em}{} 

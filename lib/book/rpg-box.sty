@@ -9,28 +9,28 @@
 	fonttitle=\fontfamily{fosj}\selectfont\scshape\bfseries\color{black},
 	fontupper=\fontfamily{lmss}\selectfont,
     title=#1,
-	colback=#2,
-    colframe={#2!50!black},
+    colback={#2!75!white},
+    colframe={#2!75!black},
 	colbacktitle=#2,
     opacityback=0.5
 }
 
 % Green comment box definition
-\newenvironment{rpg-commentbox}[1]{
-    \begin{rpg-box}[\ifthenelse{\isempty{#1}}{Note}{#1}]{commentgreen}
+\newenvironment{rpg-commentbox}{
+    \begin{rpg-box}[Note]{commentgreen}
 }{
     \end{rpg-box}
 }
 
-\newenvironment{rpg-warnbox}[1]{
-    \begin{rpg-box}[\ifthenelse{\isempty{#1}}{Attention}{#1}]{commentred}
+\newenvironment{rpg-warnbox}{
+    \begin{rpg-box}[Attention]{commentred}
 }{
     \end{rpg-box}
 }
 
 %Quelques conseils if #1 is none
-\newenvironment{rpg-suggestionbox}[1]{
-    \begin{rpg-box}[\ifthenelse{\isempty{#1}}{Conseils}{#1}]{commentblue}
+\newenvironment{rpg-suggestionbox}{
+    \begin{rpg-box}[Conseils]{commentblue}
 }{
     \end{rpg-box}
 }
@@ -58,7 +58,7 @@
     #1
 }
 
-\newtcolorbox{rpg-paperbox}[2][]{
+\newtcolorbox{rpg-examplebox}{
 	enhanced,
 	before skip=11pt plus 1pt,
 	toptitle=3mm,
@@ -67,7 +67,7 @@
 	right=8pt,
 	fonttitle=\fontfamily{fosj}\selectfont\scshape\bfseries\color{black},
 	fontupper=\fontfamily{lmss}\selectfont,
-	title=#2,
+	title=Exemple,
 	arc=0mm,
 	borderline north={1pt}{-0.5pt}{black},
 	borderline south={1pt}{-0.5pt}{black},
@@ -81,8 +81,7 @@
 		\fill [fill=black] (frame.north east) -- ++(-7pt,0) -- ++(0,5pt) -- cycle;
 		\fill [fill=black] (frame.south east) -- ++(-7pt,0) -- ++(0,-5pt) -- cycle;
 		},
-	after={\vspace{10pt plus 1pt}\noindent},
-	#1
+	after={\vspace{10pt plus 1pt}\noindent}
 }
 
 \newcommand{\rpgsmall}[1][]{
@@ -95,7 +94,7 @@
     }
 }
 
-\newtcolorbox{rpg-quotebox}[2][]{enhanced jigsaw,frame hidden,boxrule=0pt,
+\newtcolorbox{rpg-quotebox}{enhanced jigsaw,frame hidden,boxrule=0pt,
 	enhanced,
 	toptitle=3mm,
 	boxsep=0.25ex,
@@ -106,15 +105,14 @@
 	colbacktitle=bgtan,
 	arc=0mm,
 	fonttitle=\fontfamily{fosj}\selectfont\scshape\bfseries\color{black},
-	borderline west={1pt}{-0.5pt}{titlered},
-	borderline east={1pt}{-0.5pt}{titlered},
+	borderline west={1pt}{-0.5pt}{title1},
+	borderline east={1pt}{-0.5pt}{title1},
 	fontupper = \fontfamily{lmss}\selectfont,
-	title=#2,
+	%title=#2,
 	overlay={
 		\foreach \n in {north east,north west,south east,south west}
-		{\draw [titlered, fill=titlered] (frame.\n) circle (2pt); }; },
-	after={\vspace{5pt plus 1pt}\noindent},
-	#1
+		{\draw [title1, fill=title1] (frame.\n) circle (2pt); }; },
+	after={\vspace{5pt plus 1pt}\noindent}
 }
 
 %\def\signed #1{{\leavevmode\unskip\nobreak\hfil\penalty50\hskip2em
