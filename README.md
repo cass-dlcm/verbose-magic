@@ -17,7 +17,7 @@ Just clone the repo. From terminal:
 ```sh
 $ git clone https://github.com/Krozark/RPG-LaTeX-Template.git
 $ cd RPG-Latex-Template
-$ pdflatex book.tex
+$ xelatex book.tex
 $ pdflatex cards.tex
 ```
 
@@ -31,14 +31,6 @@ sudo apt-get install texlive-full
 sudo pacman -S texlive-bin texlive-core texlive-latexextra
 ```
 It's a bit unclear exactly what subset of features this module needs. As a general rule, we'd recommend installing one of larger ones.
-
-### Package Options
-- bg-letter: Loads a letter-sized background-image
-- bg-a4: Loads an A4-sized background-image
-- bg-print: Loads a printer-friendly background-image (only decal at the bottom)
-- bg-full: Loads the full background-image
-
-Per default "bg-letter" and "bg-full" are loaded.
 
 ### Todo's
 
