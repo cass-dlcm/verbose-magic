@@ -45,7 +45,6 @@ It's a bit unclear exactly what subset of features this module needs. As a gener
 
 ### Credit
 
- - Background : http://lostandtaken.com/
  - Sword : http://opengameart.org/content/medieval-sword
  - Icons : http://game-icons.net/
  - The fonts in this documents were made by Reddit user /u/Solbera, and are released under the CC-BY-SA 4.0 license.
