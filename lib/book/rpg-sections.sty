@@ -7,7 +7,6 @@
   \RequirePackage[toc]{multitoc}
 }{}
 
-
 % cover
 \newkeycommand\rpgMakeCover[
     image=,
@@ -28,12 +27,35 @@
         \fillstroke{[1]}{[0]}{1.5}{\MakeUppercase{\commandkey{title}}}\\*
         \normalfont\normalsize\includegraphics[width=.5\paperwidth]{lib/book/img/separator}
         \LARGE\vfill
-        \fontsize{24pt}{24pt}
+        \fontsize{18pt}{18pt}
         \fillstroke{[1]}{[0]}{0.5}{\textbf{\commandkey{subtitle}}}
     \end{center}
     \clearpage
     \twocolumn%
 }
+
+%\newcommand*{\hbPartCover}{lib/book/img/part-cover}
+%\newcommand*{\hbPartSubcover}{lib/book/img/part-cover2}
+%
+%\renewcommand*{\beforepartskip}{\null\vspace*{-55pt}\hspace*{-10pt}}
+%\renewcommand*{\afterpartskip}{\clearpage\hbFullPageArtHook{\hbPartSubcover}}
+%\renewcommand*{\printpartname}{\AddThispageHook{%
+%    \thispagestyle{part}%
+%    \begin{tb*}{\paperwidth}{0pt}{0pt}%
+%      \includegraphics[width=\paperwidth,height=\paperheight]{\hbPartCover}
+%    \end{tb*}%
+%    \begin{tb*}{\paperwidth}{0pt}{0pt}%
+%      \includegraphics[width=\paperwidth]{lib/book/img/header-part-circ}
+%    \end{tb*}%
+%    \begin{tb*}{.5\paperwidth}{0pt}{0pt}%
+%      \includegraphics[width=.5\paperwidth]{lib/book/img/header-part}
+%    \end{tb*}%
+%    \begin{tb*}{.5\paperwidth}{.5\paperwidth}{0pt}
+%      \reflectbox{\includegraphics[width=.5\paperwidth]{lib/book/img/header-part}}
+%    \end{tb*}%
+%  }%
+%  \hspace*{-8pt}\nodesto\fontsize{64pt}{64pt}\selectfont\color{chapter}PART%
+%}
 
 % Adjust section and subsection colors and font (change 0em to 1em if you commented the removal of section numbering)
 %\titleformat{} % cmd
@@ -43,6 +65,44 @@
 %{} % sep
 %{} % before code
 %[] % after code
+
+% \titlespacing*{〈command〉}{〈left〉}{〈before-sep〉}{〈after-sep〉}[〈right-sep〉]
+
+\titleformat{\part}
+[display]
+{\nodesto\selectfont\color{title1}\filcenter}
+{\partname{} \thepart}
+{0pt}
+{\thispagestyle{part}}
+
+\titlespacing*{\part}{0em}{0pt}{0em}
+
+%\renewcommand*{\thepart}{\arabic{part}}
+%\renewcommand*{\printpartnum}{\nodesto\fontsize{64pt}{64pt}\selectfont\color{chapter}\!\thepart}
+%\renewcommand*{\parttitlefont}{\color{chapter}\Large\scaly\bfseries\vspace*{-18pt}\hspace*{-8pt}}
+
+
+%\renewcommand\part{%
+%  \if@openright
+%    \cleardoublepage
+%  \else
+%    \clearpage
+%  \fi
+%
+%  \thispagestyle{part}%
+%
+%  \if@twocolumn
+%    \onecolumn
+%    \@tempswatrue
+%  \else
+%    \@tempswafalse
+%  \fi
+%
+%  %\null\vfil
+%  \vspace*{-35pt}\hspace*{-8pt}\nodesto\fontsize{64pt}{64pt}\selectfont\color{title1}PART
+%  %\nodesto\fontsize{64pt}{64pt}\selectfont\color{title1}
+%  \secdef\@part\@spart
+%}
 
 
 \titleformat{\chapter}
@@ -83,3 +143,4 @@
     \subsubsection{#1}\vspace{-1ex}
     \textit{#2}\vspace{1ex}\par
 }
+

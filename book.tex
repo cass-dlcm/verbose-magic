@@ -1,14 +1,9 @@
-\documentclass[10pt,twoside,twocolumn]{book}
+\documentclass[10pt,a4paper,twocolumn,openany]{book}
+
 \usepackage[bg-letter]{lib/rpg-book} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 \usepackage[english]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{hyperref}
-\usepackage{multicol}
+%\usepackage[utf8]{inputenc}
 \usepackage{lipsum}
-
-\title{RPG Template}
-\date{\today}
-\author{Maxime BARBIER}
 
 % Start document
 \begin{document}
@@ -20,19 +15,15 @@
     image = img/cover,
     logo = img/logo,
     title = Rpg Template,
-    subtitle = Created by Krozark typeset with XeTeX \\ \url{https://github.com/Krozark/RPG-LaTeX-Template}
+    subtitle = Created by Krozark the \today\\with XeTeX\\\url{https://github.com/Krozark/RPG-LaTeX-Template}
 ]
 
 
-
-%\maketitle
-
-\begin{multicols}{2}
 \tableofcontents
-\end{multicols}
 
 % Your content goes here
 \mainmatter
+\part{Part name}
 \chapter{Chapter name}
 
 \section{First Section}

@@ -1,9 +1,3 @@
-% RPG Style File
-% Created by Evan Bergeron
-% Modified by Christopher Liu December 2015
-% Modified by Yannic Meyer Feb 2016
-% Modified by Barbier Maxime Oct 2016
-
 \ProvidesPackage{lib/rpg-book}
 
 %
@@ -37,6 +31,9 @@
 \RequirePackage{tikz}
 \RequirePackage{xkeyval}
 \RequirePackage{xparse}
+%\RequirePackage[hidelinks]{hyperref}
+\RequirePackage[hidelinks,xetex]{hyperref}
+\RequirePackage{multicol}
 
 \ifluatex
   \RequirePackage{luacolor}
@@ -169,14 +166,14 @@
 % implementation is buggy. Here is a re-implementation
 % from tex.stackexchange.
 \begingroup
-  \makeatletter
-  \catcode`\/=8 %
-  \@firstofone
-    {
-      \endgroup
-      \renewcommand{\ifcommandkey}[1]{%
-        \csname @\expandafter \expandafter \expandafter
-        \expandafter \expandafter \expandafter  \expandafter
-        \kcmd@nbk \commandkey {#1}//{first}{second}//oftwo\endcsname
-      }
-   }
+\makeatletter
+\catcode`\/=8 %
+\@firstofone
+{
+  \endgroup
+  \renewcommand{\ifcommandkey}[1]{%
+    \csname @\expandafter \expandafter \expandafter
+    \expandafter \expandafter \expandafter  \expandafter
+    \kcmd@nbk \commandkey {#1}//{first}{second}//oftwo\endcsname
+  }
+}
