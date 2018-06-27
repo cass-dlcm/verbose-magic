@@ -1,11 +1,12 @@
 # RPG LaTeX Template
 
 This is an attempt at a RPG LaTeX template.
-The template compiles with pdflatex.
+The template compiles with xetex and pdflatex.
 
 ### Book
+Full preview https://github.com/Krozark/RPG-LaTeX-Template/raw/master/sample/book.pdf
+
 ![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/book.jpg)
-![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/book2.jpg)
 
 ### Cards
 ![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/cards.png)
@@ -42,9 +43,12 @@ It's a bit unclear exactly what subset of features this module needs. As a gener
  - Look into adding the ability to add large images to the document. There are some documents made with InDesign out there that accomplish this quite well.
 
 
-### Image Credit
+### Credit
 
  - Background : http://lostandtaken.com/
  - Sword : http://opengameart.org/content/medieval-sword
  - Icons : http://game-icons.net/
+ - The fonts in this documents were made by Reddit user /u/Solbera, and are released under the CC-BY-SA 4.0 license.
+ - Some decorations (footers, headers, etc.) were ripped and vectorialised from the Player's Handbook and are probably not safe to redistribute as such.
+ - The background image is from the Homebrewery, created by Scott Tolksdorf, and is released under the MIT license.
 
