@@ -4,7 +4,7 @@ This is an attempt at a RPG LaTeX template.
 The template compiles with xetex and pdflatex.
 
 ### Book
-Full preview https://github.com/Krozark/RPG-LaTeX-Template/raw/master/sample/book.pdf
+Full preview https://github.com/Krozark/RPG-LaTeX-Template/blob/master/sample/book.pdf
 
 ![Preview](https://raw.githubusercontent.com/Krozark/RPG-LaTeX-Template/master/sample/book.jpg)
 
