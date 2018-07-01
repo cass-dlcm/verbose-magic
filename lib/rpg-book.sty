@@ -18,6 +18,7 @@
 \RequirePackage[table]{xcolor}
 
 \RequirePackage[cm]{fullpage}     % Small margins
+\RequirePackage[hidelinks]{hyperref}
 
 \RequirePackage{array}
 \RequirePackage{calc}
@@ -32,12 +33,7 @@
 \RequirePackage{xkeyval}
 \RequirePackage{xparse}
 %\RequirePackage[hidelinks]{hyperref}
-\RequirePackage[hidelinks,xetex]{hyperref}
 \RequirePackage{multicol}
-
-\ifluatex
-  \RequirePackage{luacolor}
-\fi
 
 % \rpg@deprecate{<command or environment>}{<version>}[<suggestion>]
 \DeclareDocumentCommand{\rpg@deprecate}{m m o}{%
