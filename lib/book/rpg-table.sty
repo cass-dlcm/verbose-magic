@@ -1,3 +1,4 @@
+\RequirePackage{longtable}
 % Table Header
 \newcommand{\header}[1]{{
 	\par\vspace*{8pt}
@@ -17,6 +18,19 @@
 	\tabularx{\linewidth}{#1}
 }{
     \endtabularx
+    \vspace{8pt plus 1pt}
+    \noindent
+} 
+
+% Long Table Environment
+\newenvironment{rpg-longtable}[1][lp]{
+	\par\vspace*{8pt}
+	\noindent
+    \rpg@TableBodyFont
+	\rowcolors{1}{bgtan}{commentgreen} % Alternate colors
+    \longtable{#1}
+}{
+    \endlongtable
     \vspace{8pt plus 1pt}
     \noindent
 } 

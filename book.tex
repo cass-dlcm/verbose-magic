@@ -1,4 +1,5 @@
-\documentclass[10pt,a4paper,twocolumn,openany]{book}
+%\documentclass[10pt,a4paper,twocolumn,openany]{book}
+\documentclass[10pt,a4paper,openany]{book}
 
 \usepackage[bg-letter]{lib/rpg-book} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 \usepackage[english]{babel}
@@ -86,6 +87,45 @@
    	Some value  & Some value
 \end{rpg-table2}
 
+\header{rpg-longtable}
+\begin{rpg-longtable}[ccc]
+    \caption{A sample long table.} \label{tab:long} \\
+
+    \hline
+    \multicolumn{1}{c}{\textbf{First column}} & \multicolumn{1}{c}{\textbf{Second column}} & \multicolumn{1}{c}{\textbf{Third column}} \\
+    \hline 
+    \endfirsthead
+
+    \multicolumn{3}{c}%
+    {{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
+    \hline
+    \multicolumn{1}{c}{\textbf{First column}} & \multicolumn{1}{c}{\textbf{Second column}} & \multicolumn{1}{c}{\textbf{Third column}} \\ 
+    \hline 
+    \endhead
+
+    \hline
+    \multicolumn{3}{r}{{Continued on next page}} \\
+    \hline
+    \endfoot
+
+    \hline \hline
+    \endlastfoot
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+    1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
+\end{rpg-longtable}
 
 \section{List}
 \begin{rpg-list}
