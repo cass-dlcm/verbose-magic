@@ -24,8 +24,9 @@
 \RequirePackage{enumitem}
 \RequirePackage{ifluatex}
 \RequirePackage{keycommand}
-\RequirePackage{microtype}        % Improve ragged2e hyphenation and overfull boxes
-\RequirePackage{ragged2e}
+%\RequirePackage{ragged2e}
+%\RequirePackage[document]{ragged2e}
+%\RequirePackage{microtype}        % Improve ragged2e hyphenation and overfull boxes
 \RequirePackage{tabularx}
 \RequirePackage[most]{tcolorbox}  % used for some boxes
 \RequirePackage{tikz}
@@ -115,14 +116,14 @@
 \RequirePackage{lib/book/rpg-table}
 
 % Set paragraph and line spacing
-\linespread{1.1}%
-\setlength{\parindent}{1em}
-\setlength{\RaggedRightRightskip}{0pt plus 1cm}
-\setlength{\RaggedRightParindent}{\parindent}
-\hyphenpenalty=1000  % Fewer hyphens
-
-% Set left justification if not justified
-\nottoggle{justified}{\RaggedRight}
+%\linespread{1.1}%
+%\setlength{\parindent}{1em}
+%\setlength{\RaggedRightRightskip}{0pt plus 1cm}
+%\setlength{\RaggedRightParindent}{\parindent}
+%\hyphenpenalty=1000  % Fewer hyphens
+%
+%% Set left justification if not justified
+%\nottoggle{justified}{\RaggedRight}
 
 %
 % Style Parameters
