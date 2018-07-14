@@ -17,20 +17,20 @@
 
 % Green comment box definition
 \newenvironment{rpg-commentbox}{
-    \begin{rpg-box}[Note]{commentgreen}
+    \begin{rpg-box}[\rpg@commentboxname]{commentgreen}
 }{
     \end{rpg-box}
 }
 
 \newenvironment{rpg-warnbox}{
-    \begin{rpg-box}[Attention]{commentred}
+    \begin{rpg-box}[\rpg@warnboxname]{commentred}
 }{
     \end{rpg-box}
 }
 
 %Quelques conseils if #1 is none
 \newenvironment{rpg-suggestionbox}{
-    \begin{rpg-box}[Conseils]{commentblue}
+    \begin{rpg-box}[\rpg@suggestionboxname]{commentblue}
 }{
     \end{rpg-box}
 }
@@ -67,7 +67,7 @@
 	right=8pt,
 	fonttitle=\rpg@BoxTitleFont,
 	fontupper=\rpg@BoxBodyFont,
-	title=Exemple,
+	title=\rpg@exampleboxname,
 	arc=0mm,
 	borderline north={1pt}{-0.5pt}{black},
 	borderline south={1pt}{-0.5pt}{black},
