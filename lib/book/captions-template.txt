@@ -37,4 +37,8 @@ vv ------ TEMPLATE ------ vv
   \def\sensesname{...}%
   \def\languagesname{...}%
   \def\challengename{...}%
+  \def\rpg@commentboxname{...}
+  \def\rpg@warnboxname{...}
+  \def\rpg@suggestionboxname{...}
+  \def\rpg@exampleboxname{...}
 }
