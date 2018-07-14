@@ -1,5 +1,5 @@
-%\documentclass[10pt,a4paper,twocolumn,openany]{book}
-\documentclass[10pt,a4paper,openany]{book}
+\documentclass[10pt,a4paper,twocolumn,openany]{book}
+%\documentclass[10pt,a4paper,openany]{book}
 
 \usepackage[bg-letter]{lib/rpg-book} % Options: bg-a4, bg-letter, bg-full, bg-print, bg-none.
 \usepackage[english]{babel}
@@ -94,27 +94,15 @@
 \end{rpg-table2}
 
 \header{rpg-longtable}
+
+\tablehead{%
+    \hline
+    \textbf{first column} & \textbf{second column} & \textbf{third column} \\
+    \hline
+}
+
 \begin{rpg-longtable}[ccc]
-    \caption{A sample long table.} \label{tab:long} \\
-
-    \hline
-    \textbf{First column} & \textbf{Second column} & \textbf{Third column} \\
-    \hline 
-    \endfirsthead
-
-    \multicolumn{3}{c}{{\bfseries \tablename\ \thetable{} -- continued from previous page}} \\
-    \hline
-    \textbf{First column} & \textbf{Second column} & \textbf{Third column} \\ 
-    \hline 
-    \endhead
-
-    \hline
-    \multicolumn{3}{r}{{Continued on next page}} \\
-    \hline
-    \endfoot
-
-    \hline \hline
-    \endlastfoot
+%\begin{supertabular}{ccc}
     1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
     1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
     1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
@@ -131,6 +119,7 @@
     1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
     1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\ 1 & 2 & 3 \\
 \end{rpg-longtable}
+%\end{supertabular}
 
 \section{List}
 \begin{rpg-list}
@@ -196,6 +185,7 @@
 \rpgart{t}{img/art-top}
 \rpgart{b}{img/art-bottom}
 
+\lipsum
 \lipsum
 
 \chapter{Colors}

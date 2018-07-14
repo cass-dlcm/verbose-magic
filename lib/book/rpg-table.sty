@@ -1,4 +1,5 @@
-\RequirePackage{longtable}
+%\RequirePackage{longtable}
+\RequirePackage{supertabular}
 % Table Header
 \newcommand{\header}[1]{{
 	\par\vspace*{8pt}
@@ -22,19 +23,6 @@
     \noindent
 } 
 
-% Long Table Environment
-\newenvironment{rpg-longtable}[1][lp]{
-	\par\vspace*{8pt}
-	\noindent
-    \rpg@TableBodyFont
-	\rowcolors{1}{bgtan}{commentgreen} % Alternate colors
-    \longtable{#1}
-}{
-    \endlongtable
-    \vspace{8pt plus 1pt}
-    \noindent
-} 
-
 % Table Environment
 \newenvironment{rpg-table2}[1][lX]{
 	\par\vspace*{8pt}
@@ -45,6 +33,19 @@
 }
 {
     \endtabularx
+    \vspace{8pt plus 1pt}
+    \noindent
+} 
+
+% Long Table Environment
+\newenvironment{rpg-longtable}[1][lX]{
+	\par\vspace*{8pt}
+	\noindent
+    \rpg@TableBodyFont
+    \rowcolors{1}{commentgreen}{bgtan} % Alternate colors
+    \supertabular{#1}
+}{
+    \endsupertabular
     \vspace{8pt plus 1pt}
     \noindent
 } 
