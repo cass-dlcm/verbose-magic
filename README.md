@@ -20,7 +20,7 @@ $ xelatex book.tex
 
 ### Contributions
 
-The best way you can contribute is by providning playtest feedback.
+The best way you can contribute is by providing playtest feedback.
 Playtests will be necessary in order to establish proper rules for balance.
 You can send feedback by replying to the feedback issue here on GitHub, or by emailing me at cassandra.delacruzmunoz@gmail.com.
 
@@ -29,6 +29,6 @@ Additonally, you can help by translating the document into other languages.
 
 ### Credit
 
- - Original template by Krozarth, located at https://github.com/Krozark/RPG-LaTeX-Template.git
+ - Original template by Krozarth, located at https://github.com/Krozark/RPG-LaTeX-Template
  - The fonts in this documents were made by Reddit user /u/Solbera, and are released under the CC-BY-SA 4.0 license.
  
