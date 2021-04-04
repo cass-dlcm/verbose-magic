@@ -20,7 +20,7 @@ jobs:
       - uses: dante-ev/latex-action@master
         with:
           root_file: book.tex
-          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -f -latexoption=-shell-escape
+          args: -lualatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -f
 
       - uses: actions/upload-artifact@v2
         with:
