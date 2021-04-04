@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: Log
-          path: *.log
+          path: ./*.log
       
       - name: Upload book
         uses: actions/upload-artifact@v2
