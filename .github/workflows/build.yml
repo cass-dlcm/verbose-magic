@@ -17,12 +17,10 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - uses: xu-cheng/latex-action@v2
+      - uses: dante-ev/latex-action@master
         with:
           root_file: book.tex
-          latexmk_use_xelatex: true
-          args: -pdf -file-line-error -interaction=nonstopmode -f
-          latexmk_shell_escape: true
+          args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -f -latexoption=-shell-escape -latexoption=-output-driver="xdvipdfmx -z 0"
 
       - uses: actions/upload-artifact@v2
         with:
