@@ -36,7 +36,7 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Run Tectonic
-        run: tectonic book.tex
+        run: tectonic book.tex -output-driver="xdvipdfmx -z 0"
       
       - name: Upload book
         uses: actions/upload-artifact@v2
