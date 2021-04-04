@@ -16,7 +16,7 @@ Or if you want to compile it yourself, clone the repo. From terminal:
 ```sh
 $ git clone git@github.com/cass-dlcm/verbose-magic.git
 $ cd RPG-Latex-Template
-$ xelatex book.tex
+$ xelatex -file-line-error -shell-escape -output-driver="xdvipdfmx -z 0" book.tex
 ```
 
 ### Contributions
