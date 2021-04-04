@@ -12,3 +12,4 @@ book.xmpdata
 *.toc
 *.out
 creationdate.timestamp
+book.fdb_latexmk
