@@ -5,3 +5,10 @@
 *.bbl
 *.synctex.gz
 *.pdf
+book.xmpdata
+*.synctex(busy)
+*.lua
+*.xmpi
+*.toc
+*.out
+creationdate.timestamp
