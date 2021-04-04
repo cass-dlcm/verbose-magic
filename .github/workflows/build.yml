@@ -29,7 +29,7 @@ jobs:
 
       - name: Log retrieval
         if: ${{ failure() }}
-        uses: actions/upload-artificat@v2
+        uses: actions/upload-artifact@v2
         with:
           name: log
           path: book.log
