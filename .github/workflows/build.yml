@@ -21,7 +21,7 @@ jobs:
         with:
           root_file: book.tex
           latexmk_use_xelatex: true
-          args: -pdf -file-line-error -interaction=nonstopmode -f
+          args: -pdf -file-line-error -interaction=nonstopmode -f -output-driver="xdvipdfmx -z 0"
           latexmk_shell_escape: true
 
       - uses: actions/upload-artifact@v2
