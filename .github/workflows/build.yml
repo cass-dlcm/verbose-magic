@@ -24,5 +24,12 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: Log
+          name: Book
+          path: book.pdf
+
+      - name: Log retrieval
+        if: ${{ failure() }}
+        uses: actions/upload-artificat@v2
+        with:
+          name: log
           path: book.log
