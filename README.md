@@ -9,7 +9,7 @@ This work is licensed under a <a rel="license" href="http://creativecommons.org/
 
 ### Installation
 
-Just get it from the itch.io page: https://itch.io/cass-dlcm/verbose-magic
+Just get it from the itch.io page: https://cass-dlcm.itch.io/verbose-magic
 
 Or if you want to compile it yourself, clone the repo. From terminal:
 
