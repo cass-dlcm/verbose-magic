@@ -1,5 +1,6 @@
 # Verbose Magic
 
+[![CI](https://github.com/cass-dlcm/verbose-magic/actions/workflows/build.yml/badge.svg)](https://github.com/cass-dlcm/verbose-magic/actions/workflows/build.yml)
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
 
 This is a magic system for roleplaying, both for use by itself, as well as with other roleplaying systems.
