@@ -21,7 +21,7 @@ jobs:
         with:
           root_file: book.tex
           latexmk_use_xelatex: true
-          args: -pdf -file-line-error -interaction=nonstopmode -shell-escape -f
+          args: -pdf -file-line-error -interaction=nonstopmode -shell-escape -f -e "$max_repeat=10"
 
       - uses: actions/upload-artifact@v2
         with:
